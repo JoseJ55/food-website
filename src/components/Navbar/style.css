@@ -2,6 +2,36 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* display: none; */
-    color: white
+    color: white;
+    width: 80%;
+    height: 100vh;
+    z-index: 2;
+}
+
+#navIcon {
+    padding: 1vh 1vw;
+}
+
+#icon {
+    background-color: transparent;
+    border: none;
+}
+
+#navBtns {
+    width: 100%;
+    margin: auto;
+    background-color: #777;
+}
+
+.navBtn {
+    width: 100%;
+    font-size: 120%;
+    padding: 2vh 0;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.navBtn:active {
+    background-color: rgba(0, 0, 0, .7);
 }
