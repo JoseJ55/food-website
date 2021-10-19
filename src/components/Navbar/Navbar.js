@@ -18,13 +18,21 @@ function Navbar() {
     }
 
     return (
-        <div id="navbar" style={navBack}>
-            <div id="navIcon">
-                <button id="icon" onClick={toggleNav}><FiMenu size={42} color="white" /></button>
+        <div id="navbar"> 
+        {/* style={navBack}> */}
+            <div id="navMain" style={navBack}>
+                <div id="navIcon">
+                    <button id="icon" onClick={toggleNav}><FiMenu size={42} color="white" /></button>
+                </div>
+                <div id="navBtns" style={navStyle}>
+                    <button className="navBtn" onClick={toggleNav}><a href="/">Home</a></button>
+                </div>
             </div>
-            <div id="navBtns" style={navStyle}>
-                <button className="navBtn" onClick={toggleNav}><a href="/">Home</a></button>
+            <div id="navDim" style={navStyle}>
+                <button id="dim" onClick={toggleNav}>
+                </button>
             </div>
+            
         </div>
     )
 }
