@@ -2,18 +2,23 @@ import React, { useState } from "react";
 import "./style.css";
 
 import { FiMenu } from "react-icons/fi"
+import { BsFileX } from "react-icons/bs";
 
 function Navbar() {
     const [navStyle, setNavStyle] = useState({display: "none"});
     const [navBack, setNavBack] = useState({backgroundColor: "transparent"});
+    const [navHeight, setNavHeight] = useState({height: "10vh"});
 
     const toggleNav = () => {
         if(navStyle.display === "none"){
             setNavStyle({display: "flex"});
             setNavBack({backgroundColor: "#444"});
+            // setNavBack({backgroundColor: "#444", display: "flex"});
+            // setNavHeight({height: "10vh", width: "auto"})
         } else {
             setNavStyle({display: "none"});
-            setNavBack({backgroundColor: "transparent"});
+            setNavBack({backgroundColor: "transparent", display: "none"});
+            // setNavHeight({height: "100vh", width: "100%"})
         }
     }
 
