@@ -15,7 +15,7 @@ function Header() {
                     <li>News</li>
                 </ul>
             </div> */}
-            <Navbar />
+            {/* <Navbar /> */}
 
             <div id="headerImg"></div>
 
