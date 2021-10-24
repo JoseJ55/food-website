@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 
 import { BiSearch } from "react-icons/bi"
+import Searched from "./../Searched/Searched";
 
 function Search() {
     const [searchText, setSearchText] = useState("");
@@ -20,9 +21,10 @@ function Search() {
                     placeholder="Eggs Benedict ..."
                     onChange={(value) => setSearchText(value.target.value)}
                 />
-                <button id="searchBtn">
+                <button id="searchBtn" onClick={() => search()}>
                     <BiSearch size={28}/>
                 </button>
+                <Search />
             </div>
         </div>
     )

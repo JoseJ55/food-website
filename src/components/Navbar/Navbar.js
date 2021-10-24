@@ -3,7 +3,7 @@ import "./style.css";
 import { useSpring, animated } from "react-spring";
 
 import { FiMenu } from "react-icons/fi";
-
+// need to work on getting the animation for the navbar going back to work everything else works
 function Navbar() {
     const [navStyle, setNavStyle] = useState({display: "none", zIndex: -2});
     const [navChange, setNavChange] = useState({height: "auto", width: "auto"});
@@ -12,6 +12,10 @@ function Navbar() {
     const anim = useSpring({
         opacity: navTag ? 1 : 0,
         marginLeft: navTag ? 0 : -600,
+    })
+    const ani = useSpring({
+        opacity: navTag ? 0 : 1,
+        marginLeft: navTag ? -600 : 0,
     })
 
     const toggleNav = () => {

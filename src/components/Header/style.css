@@ -42,10 +42,16 @@
     font-family: 'Lucida Handwriting', 'Garamond';
 }
 
-#headerButton {
+#headerInfo a {
     position: absolute;
     bottom: 0;
-    margin: 10%;
+    margin: 10%
+}
+
+#headerButton {
+    /* position: absolute;
+    bottom: 0;
+    margin: 10%; */
     padding: 0 15vw;
     background-color: rgba(255, 255, 255, .2);
     border: none;
