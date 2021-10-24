@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 import "./style.css";
+import { useSpring, animated } from "react-spring";
 
-import { FiMenu } from "react-icons/fi"
-import { BsFileX } from "react-icons/bs";
+import { FiMenu } from "react-icons/fi";
 
 function Navbar() {
     const [navStyle, setNavStyle] = useState({display: "none", zIndex: -2});
-    const [navBack, setNavBack] = useState({backgroundColor: "transparent"});
     const [navChange, setNavChange] = useState({height: "auto", width: "auto"});
+    const [navTag, setNavTag] = useState(false);
+
+    const anim = useSpring({
+        opacity: navTag ? 1 : 0,
+        marginLeft: navTag ? 0 : -600,
+    })
 
     const toggleNav = () => {
         if(navStyle.display === "none"){
             setNavStyle({display: "flex", zIndex: 3});
-            setNavBack({backgroundColor: "#444"});
+            // transform: "translate(20%, 0%)"
             setNavChange({height: "100vh", width: "100%", backgroundColor: "rgba(0, 0, 0, .4)"})
+            setNavTag(true);
         } else {
             setNavStyle({display: "none", height: 0, zIndex: -2});
-            setNavBack({backgroundColor: "transparent"});
+            // transform: "translate(-100%, 0%)"
             setNavChange({height: "auto", width: "auto", backgroundColor: "transparent"})
+            setNavTag(false);
         }
     }
 
@@ -27,14 +34,16 @@ function Navbar() {
                 <button id="icon" onClick={toggleNav}><FiMenu size={42} color="white" /></button>
             </div>
 
-            <div id="navItems" style={navStyle}>
-                <div id="navBtns">
-                    <button className="navBtn" onClick={toggleNav}><a href="/">Home</a></button>
+            <animated.div style={anim}>
+                <div id="navItems" style={navStyle}>
+                    <div id="navBtns">
+                        <button className="navBtn" onClick={toggleNav}><a href="/">Home</a></button>
+                    </div>
+                    
+                    <button id="dim" onClick={toggleNav} style={navStyle}>
+                    </button>
                 </div>
-                
-                <button id="dim" onClick={toggleNav} style={navStyle}>
-                </button>
-            </div>
+            </animated.div>
         </div>
     )
 }
